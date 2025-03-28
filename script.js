@@ -18,7 +18,7 @@ function addTask() {
     taskList.appendChild(li);
 
     let completeTaskList = JSON.parse(localStorage.getItem("completeTaskList")) || [];
-    completeTaskList.push(task.value); // Add the task value to the array
+    completeTaskList.push(task.value); // Add the task value to the array -- these few lines were modified by copilot
     localStorage.setItem("completeTaskList", JSON.stringify(completeTaskList)); // Save updated array to localStorage
 
     task.value = ""; // Clear the input field
@@ -29,6 +29,9 @@ function removeLastTask() {
     const lastOne = taskList.lastElementChild;
     if(lastOne){
         taskList.removeChild(lastOne);
+        let completeTaskList = JSON.parse(localStorage.getItem("completeTaskList")) || [];
+        completeTaskList.pop();
+        localStorage.setItem("completeTaskList", JSON.stringify(completeTaskList));
     }
 }
 
