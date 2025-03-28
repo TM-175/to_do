@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tanay's To Do List</title>
+<script src="script.js"></script>
+<style src="style.css"></style>
+<h1>Tanay's To Do List</h1>
+</head>
+
+<body>
+    <div id="login">
+        <h1>Password:</h1>
+        <input type="text" id="password" placeholder="Enter your password">
+        <button id="submit" onclick="checkPassword()">Submit</button>
+    </div>
+    <div id="todo" style="display:none;">
+        <h1>To Do List</h1>
+        <input type="text" id="task" placeholder="Enter a new task">
+        <button id="add" onclick="addTask()">Add Task</button>
+        <button id="remove" onclick="removeLastTask()">Remove Last Task</button>
+    </div>
+    <div id="taskList" style="display:none;">
+        <h2>Tasks:</h2>
+        <ul id="tasks"></ul>
+    </div>
+</body>
+
+</html>
