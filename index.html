@@ -18,6 +18,9 @@
         <input type="text" id="task" placeholder="Enter a new task">
         <button id="add" onclick="addTask()">Add Task</button>
         <button id="remove" onclick="removeLastTask()">Remove Last Task</button>
+        <br>
+        <input type="number" id="removeIndex" placeholder="0">
+        <button id="removeSpecified" onclick="removeSpecifiedTask()">Remove Specified Task</button>
     </div>
     <div id="taskList" style="display:none;">
         <h2>Tasks:</h2>

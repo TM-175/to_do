@@ -35,6 +35,18 @@ function removeLastTask() {
     }
 }
 
+function removeSpecifiedTask() {
+    const taskList = document.getElementById("tasks");
+    const chosenIndex = parseInt(document.getElementById("removeIndex").value, 10);
+    const specified = taskList.children[chosenIndex];
+    if(specified){
+        taskList.removeChild(specified);
+        let completeTaskList = JSON.parse(localStorage.getItem("completeTaskList")) || [];
+        completeTaskList.splice(chosenIndex, 1);
+        localStorage.setItem("completeTaskList", JSON.stringify(completeTaskList));
+    }
+}
+
 function rememberTasks() {
     const completeTaskList = JSON.parse(localStorage.getItem("completeTaskList"));
     for(t in completeTaskList){
